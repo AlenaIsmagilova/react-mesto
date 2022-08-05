@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header/Header";
+import styles from "./App.module.css";
+import Profile from "./components/Profile/Profile.js";
+import { getUser, getCards } from "./components/Api/Api.js";
+import { useEffect, useState } from "react";
+import Cards from "./components/Cards/Cards.js";
+import Footer from "./components/Footer/Footer.js";
 
 function App() {
+  const [userInfo, setUserInfo] = useState([]);
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    getUser().then((data) => setUserInfo(data));
+
+    getCards().then((data) => setCards(data));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <body className={styles.page}>
+      <Header />
+      <section className={styles.content}>
+        <Profile
+          image={userInfo.avatar}
+          name={userInfo.name}
+          profession={userInfo.about}
+        ></Profile>
+        <Cards cards={cards}></Cards>
+      </section>
+      <Footer />
+    </body>
   );
 }
 

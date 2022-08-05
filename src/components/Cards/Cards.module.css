@@ -1,0 +1,130 @@
+.cards {
+  max-width: 880px;
+  padding-top: 51px;
+  padding-bottom: 67px;
+}
+
+@media screen and (max-width: 767px) {
+  .cards {
+    padding-bottom: 48px;
+    padding-top: 36px;
+  }
+}
+
+.cardsList {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 17px;
+  row-gap: 20px;
+}
+
+@media screen and (max-width: 1023px) {
+  .cardsList {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cardsList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cardItem {
+  list-style-type: none;
+  max-width: 282px;
+  width: 100%;
+  position: relative;
+}
+
+.cardImage {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+
+.cardImage:hover {
+  cursor: pointer;
+}
+
+.cardButtonDelete {
+  background-image: url(../../images/deleteButton.svg);
+  background-color: transparent;
+  height: 19px;
+  width: 18px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: opacity 1s ease;
+  background-position: center;
+  border: 0 transparent;
+  padding: 0;
+}
+
+.cardButtonDelete:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.cardDesc {
+  display: flex;
+  padding: 22px 15px 22px 21px;
+  min-width: 246px;
+  background-color: #ffffff;
+  border-radius: 0 0 10px 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .cardDesc {
+    padding-bottom: 25px;
+  }
+}
+
+.cardTitle {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 900;
+  color: #000000;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 190px;
+}
+
+.cardButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardButtonLike {
+  background-image: url(../../images/Group.svg);
+  padding: 0;
+  width: 22px;
+  height: 19px;
+  border: 0 transparent;
+  background-repeat: no-repeat;
+  align-self: center;
+  background-color: transparent;
+  transition: opacity 1s ease;
+}
+
+.cardButtonLike:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.cardButtonLikeActive {
+  background-image: url(../../images/Union.svg);
+}
+
+.countCardLikes {
+  margin: 3px 0 0;
+}

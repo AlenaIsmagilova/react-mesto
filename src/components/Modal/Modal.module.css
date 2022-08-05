@@ -1,0 +1,156 @@
+.modalContainer {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  width: 430px;
+  height: 330px;
+  z-index: 10;
+}
+
+.modalButtonClosed {
+  background-image: url(../../images/close.svg);
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0 transparent;
+  background-color: transparent;
+  transition: opacity 1s ease;
+  position: absolute;
+  top: -33px;
+  right: -33px;
+}
+
+.modalButtonClosed:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .modalButtonClosed {
+    width: 20px;
+    height: 20px;
+    top: -37px;
+    right: -1px;
+    background-size: contain;
+  }
+}
+
+.modalTitle {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 26px;
+  margin: 34px 64px 54px 36px;
+}
+
+@media screen and (max-width: 767px) {
+  .modalTitle {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 25px 22px 75px;
+  }
+}
+
+.form {
+  width: 430px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    width: 282px;
+  }
+}
+
+.formField {
+  margin-bottom: 30px;
+  height: 27px;
+}
+
+.formField:last-of-type {
+  margin-bottom: 0;
+}
+
+.formInput {
+  width: 358px;
+  border: 0 white solid;
+  border-bottom: 1px grey solid;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.formInput::placeholder {
+  color: #000000;
+  font-weight: 400;
+  margin-bottom: 13px;
+}
+
+@media screen and (max-width: 767px) {
+  .formInput {
+    width: 238px;
+    height: 14px;
+  }
+}
+
+.formInputError {
+  display: none;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  text-align: start;
+  margin: 5px 0 0;
+  max-width: 358px;
+}
+
+.formButton {
+  width: 358px;
+  min-height: 50px;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  margin: 45px 37px;
+  transition: opacity 1s ease;
+  border-radius: 2px;
+  padding: 0;
+  border: 0 black;
+}
+
+.formButton:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.formButton:disabled {
+  border: 1px solid #c4c4c4;
+  background-color: white;
+  color: #c4c4c4;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+  .formButton {
+    font-size: 14px;
+    line-height: 17px;
+    width: 238px;
+    min-height: 46px;
+    margin-top: 45px;
+    margin-bottom: 25px;
+  }
+}
