@@ -25,7 +25,7 @@ function App() {
           name={userInfo.name}
           profession={userInfo.about}
         ></Profile>
-        <Cards cards={cards}></Cards>
+        <Cards cards={cards} user={userInfo} setCards={setCards}></Cards>
       </section>
       <Footer />
     </body>

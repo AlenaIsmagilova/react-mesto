@@ -42,3 +42,17 @@ export const getCards = () => {
     headers: config.headers,
   }).then(checkResponse);
 };
+
+export const like = (cardId) => {
+  return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
+    method: "PUT",
+    headers: config.headers,
+  }).then(checkResponse);
+};
+
+export const unlike = (cardId) => {
+  return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
+    method: "DELETE",
+    headers: config.headers,
+  }).then(checkResponse);
+};
